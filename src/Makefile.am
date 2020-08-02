@@ -7,12 +7,12 @@ AM_CFLAGS = $(GLOBAL_CFLAGS)
 AM_LDFLAGS = $(GLOBAL_LDFLAGS)
 
 lib_LTLIBRARIES = \
-	libplist-2.0.la \
-	libplist++-2.0.la
+	libplist.la \
+	libplist++.la
 
-libplist_2_0_la_LIBADD = $(top_builddir)/libcnary/libcnary.la
-libplist_2_0_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBPLIST_SO_VERSION) -no-undefined
-libplist_2_0_la_SOURCES = \
+libplist_la_LIBADD = $(top_builddir)/libcnary/libcnary.la
+libplist_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBPLIST_SO_VERSION) -no-undefined
+libplist_la_SOURCES = \
 	base64.c base64.h \
 	bytearray.c bytearray.h \
 	strbuf.h \
@@ -24,9 +24,9 @@ libplist_2_0_la_SOURCES = \
 	bplist.c \
 	plist.c plist.h
 
-libplist___2_0_la_LIBADD = libplist-2.0.la
-libplist___2_0_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBPLIST_SO_VERSION) -no-undefined
-libplist___2_0_la_SOURCES = \
+libplist___la_LIBADD = libplist.la
+libplist___la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBPLIST_SO_VERSION) -no-undefined
+libplist___la_SOURCES = \
 	Node.cpp \
 	Structure.cpp \
 	Array.cpp \
@@ -53,8 +53,8 @@ libplist___2_0_la_SOURCES = \
 	$(top_srcdir)/include/plist/Uid.h
 
 if WIN32
-libplist_2_0_la_LDFLAGS += -avoid-version -static-libgcc
-libplist___2_0_la_LDFLAGS += -avoid-version -static-libgcc
+libplist_la_LDFLAGS += -avoid-version -static-libgcc
+libplist___la_LDFLAGS += -avoid-version -static-libgcc
 endif
 
 pkgconfigdir = $(libdir)/pkgconfig
