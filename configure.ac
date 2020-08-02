@@ -284,8 +284,8 @@ AC_OUTPUT([
 Makefile
 libcnary/Makefile
 src/Makefile
-src/libplist-2.0.pc
-src/libplist++-2.0.pc
+src/libplist.pc
+src/libplist++.pc
 include/Makefile
 tools/Makefile
 docs/Makefile

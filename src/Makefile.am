@@ -58,6 +58,4 @@ libplist___la_LDFLAGS += -avoid-version -static-libgcc
 endif
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = \
-	libplist-2.0.pc \
-	libplist++-2.0.pc
+pkgconfig_DATA = libplist.pc libplist++.pc
